@@ -5,6 +5,24 @@ invert_match=0
 pattern=""
 filename=""
 
+helpp() {
+  echo "Usage of $0 : "
+  echo "Search for Pattern in file"
+  echo ""
+  echo "Options:"
+  echo " -n Show line numbers for each match"
+  echo " -v Invert the match"
+  exit 0
+}
+
+
+for arg in "$@"; do
+  if [ "$arg" = "--help" ]; then
+    helpp
+  fi
+done
+
+
 while getopts ":nv" opt; do
     case $opt in
         n)
