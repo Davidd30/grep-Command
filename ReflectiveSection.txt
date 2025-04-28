@@ -1,0 +1,39 @@
+1. How my script handles options and arguments
+
+First, it scans for "--help" by checking each argument. If found, it shows help text and quits.
+
+Then it uses getopts to look for "-n" (to show line numbers) and "-v" (to show non-matching lines instead of matches).
+
+After finding all the options it shifts them out of the way
+
+Next, it checks if you gave it both a pattern to search for and a file name. If not, it prints an error.
+
+It also makes sure the file actually exists before trying to read it.
+
+
+Finally, it reads the file line by line, it checks each line for your pattern and shows matches with or without line number.
+
+
+
+
+
+2. Adding more features (like regex, -i, -c, -l)
+
+if i will add these features i would need to Add these new options to the getopts section and create new flags to keep track of them. I would need to change how the script processes matches
+for example, with "-c" I would count matches instead of printing lines, and with "-l" i would just print the filename once and exit. 
+For regex, i will create a condition like what i did in "--help"
+
+
+
+
+3. The hardest part
+The hardest part for me is to try to find another way to create a --help argument instead of using if condition.
+
+
+
+
+
+
+
+
+
